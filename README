@@ -1,0 +1,15 @@
+Unpack and repack tool for TP-Link AX55 firmware (may work with other firmwares using safeload image format and ubi image)
+
+Requirements:
+python, python-pip, ubi_reader python module (pip install ubi_reader), squashfs-tools (apt install squashfs-tools), make, gcc
+
+Usage:
+1. compile md5-fix utility, execute:
+make
+2. Unpack stock firmware with 01-unpack.sh, e.g.
+./01-unpack.sh ax55v1-up-all-ver1-1-1-P1[20220621-rel71166]_sign_2022-06-21_20.01.15.bin
+
+3. Modify files under squashfs-root
+
+4. Repack firmware with 02-repack.sh, e.g.
+./02-repack.sh myfw.bin
